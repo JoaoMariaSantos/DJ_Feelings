@@ -4,6 +4,8 @@ using UnityEngine;
 using Noise;
 using Terrain;
 
+namespace Player
+{
 public class PlayerMorph : MonoBehaviour
 {
     public NoiseManager noiseManager;
@@ -37,7 +39,7 @@ public class PlayerMorph : MonoBehaviour
         float finalSaturation = (valence + 1) / 2 + 0.1f;
         finalSaturation = Mathf.Clamp(finalSaturation, 0, 1);
 
-        float finalValue = (arousal + 1) / 2 + 0.2f;
+        float finalValue = (arousal + 1) / 2 + 0.3f;
         finalSaturation = Mathf.Clamp(finalSaturation, 0, 1);
 
         return Color.HSVToRGB(finalHue, finalSaturation, finalValue);
@@ -45,7 +47,7 @@ public class PlayerMorph : MonoBehaviour
 
     float GetSmoothness(float arousal)
     {
-        float smoothness = (arousal + 1) / 2;
+        float smoothness = (arousal + 1) / 2 + 0.2f;
         smoothness = Mathf.Clamp(smoothness, 0, 1);
 
         return smoothness;
@@ -58,4 +60,5 @@ public class PlayerMorph : MonoBehaviour
 
         return metallic;
     }
+}
 }

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Player
+{
 public class PlayerChild : MonoBehaviour
 {
     public Transform player;
@@ -9,4 +11,5 @@ public class PlayerChild : MonoBehaviour
     {
         transform.position = player.position;
     }
+}
 }

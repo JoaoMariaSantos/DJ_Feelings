@@ -37,9 +37,9 @@ namespace Terrain
             noiseManager = GameObject.FindGameObjectWithTag("NoiseManager").GetComponent<NoiseManager>();
             cubes = CreateCubes(nCubesSide, cubeEdgeMeasure, material);
 
-            referenceHues = new[] { new Vector3 (-1, -1, 360),  new Vector3(0, -1, 30),  new Vector3 (1, -1, 60),
-                                    new Vector3 (-1,  0, 300),                           new Vector3 (1,  0, 90),
-                                    new Vector3 (-1,  1, 240),  new Vector3(0,  1, 200), new Vector3 (1,  1, 160)
+            referenceHues = new[] { new Vector3 (-1,  1, 0),  new Vector3(0, -1, 30),  new Vector3 (1,  1,  60),
+                                    new Vector3 (-1,  0, 300),                           new Vector3 (1,  0,  90),
+                                    new Vector3 (-1, -1, 240),    new Vector3(0,  1, 200), new Vector3 (1, -1, 160)
                                   };
         }
         void Start()
@@ -138,7 +138,7 @@ namespace Terrain
 
         void UpdateCubes(Material mat, float sinValue, float valence, float arousal)
         {
-            float scale = (arousal + 1) * 10f;
+            float scale = (Mathf.Pow(arousal + 1, 3)) * 1.5f;
             float erraticness = Vector2.Distance(new Vector2(-1, -1), new Vector2(valence, arousal)) * 0.15f;
 
             for (int x = 0; x < nCubesSide; x++)
@@ -148,7 +148,8 @@ namespace Terrain
                     int currentIndex = x * nCubesSide + z;
 
                     float distance = Vector3.Distance(cubes[currentIndex].transform.position, characterPos.position) + erraticness;
-                    float distanceValue = distance / 20;
+                    float distanceValue = distance / 10;
+                    //float distanceValue = 1 / 1 + Mathf.Pow(100000, 1 - distance);
                     //float distanceValue = 2;
 
                     float xDistance = cubes[currentIndex].transform.position.x - characterPos.position.x;
@@ -156,10 +157,10 @@ namespace Terrain
 
                     float currentCubeHeight = 0;
                     //float currentCubeHeight = distanceValue * scale;
-                    if(isFlat) currentCubeHeight = Mathf.PerlinNoise(xDistance * erraticness + sinValue, zDistance * erraticness + sinValue) * distanceValue * scale + 0.2f;
-                    else currentCubeHeight = Mathf.PerlinNoise(xDistance * erraticness + sinValue, zDistance * erraticness + sinValue) * scale;
+                    if(isFlat) currentCubeHeight = Mathf.PerlinNoise(xDistance * erraticness + sinValue, zDistance * erraticness + sinValue) * distanceValue * scale + 0.1f;
+                    else       currentCubeHeight = Mathf.PerlinNoise(xDistance * erraticness + sinValue, zDistance * erraticness + sinValue) * scale;
                     //float currentCubeHeight = Mathf.PerlinNoise(xDistance * erraticness + sinValue, zDistance * erraticness + sinValue) * 0.75f * scale;
-                    if (currentCubeHeight < 0.1f) currentCubeHeight = 0.1f;
+                    //if (currentCubeHeight < 0.1f) currentCubeHeight = 0.1f;
                     cubes[currentIndex].transform.position = new Vector3(cubes[currentIndex].transform.position.x, currentCubeHeight / 2, cubes[currentIndex].transform.position.z);
                     cubes[currentIndex].transform.localScale = new Vector3(cubeEdgeMeasure, currentCubeHeight, cubeEdgeMeasure);
                 }

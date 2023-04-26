@@ -7,10 +7,12 @@ namespace Noise
     public class NoiseManager : MonoBehaviour
     {
         public Transform playerPos;
-        [Range(-1,1)]
-        public float arousalValue;
-        [Range(-1,1)]
-        public float valenceValue;
+        [Range(0, 1)]
+        public float maxArousalValue;
+        private float arousalValue;
+        [Range(0, 1)]
+        public float maxValenceValue;
+        private float valenceValue;
         float arousalValueEdited;
         float valenceValueEdited;
         public float mainValuesNoiseInc;
@@ -33,8 +35,8 @@ namespace Noise
             float noiseOffsetX = playerPos.position.x * mainValuesNoiseInc;
             float noiseOffsetZ = playerPos.position.z * mainValuesNoiseInc;
 
-            arousalValue = -1 + Mathf.PerlinNoise(seed + noiseOffsetX, noiseOffsetZ) * 2;
-            valenceValue = -1 + Mathf.PerlinNoise(seed + noiseOffsetX + secondSeed, noiseOffsetZ + 1000) * 2;
+            arousalValue = Map(-1 + Mathf.PerlinNoise(seed + noiseOffsetX, noiseOffsetZ)                     * 2, -1, 1, -maxArousalValue, maxArousalValue);
+            valenceValue = Map(-1 + Mathf.PerlinNoise(seed + noiseOffsetX + secondSeed, noiseOffsetZ + 1000) * 2, -1, 1, -maxValenceValue, maxValenceValue);
 
             if (timeTracker < startingTime)
             {
@@ -45,9 +47,11 @@ namespace Noise
 
             arousalValueEdited = 1 / (1 + Mathf.Pow(234, -arousalValue)) * 2 - 1; //through sigmoid graph for more extreme results
             valenceValueEdited = 1 / (1 + Mathf.Pow(234, -valenceValue)) * 2 - 1;
+        }
 
-            arousalValueEdited = arousalValue;
-            valenceValueEdited = valenceValue;
+        public float Map(float value, float from1, float to1, float from2, float to2)
+        {
+            return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
         }
 
         public float GetArousalRaw()
