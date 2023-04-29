@@ -11,36 +11,64 @@ namespace Artifact
         public GameObject diamond;
         public NoiseManager noiseManager;
         public PlayerMovement playerMovement;
-        public float minDistanceForGeneration = 10;
-        public float maxDistance = 20;
+        public float minDistanceForGeneration;
+        public float maxDistance;
         public List<Diamond> diamonds;
         void Start()
         {
         }
-
-        // Update is called once per frame
         void Update()
         {
-            int? diamondTooFar = CheckDiamondTooFar();
-            if(diamondTooFar != null)
+            int? indexDiamondToReset = CheckDiamondNeedsReset();
+            if (indexDiamondToReset != null)
             {
-                GenerateDiamond(diamondTooFar);
+                GenerateDiamond((int)indexDiamondToReset);
             }
         }
 
-        private int? CheckDiamondTooFar()
+        private int? CheckDiamondNeedsReset()
         {
-            for(int i = 0; i < diamonds.Count; i++)
+            for (int i = 0; i < diamonds.Count; i++)
             {
-                if(Vector2.Distance(playerMovement.GetPosFlat(), diamonds[i].GetPosFlat()) > maxDistance) return i;
+                if (diamonds[i].GetCollectionStatus()){
+                    Debug.Log(diamonds[i].gameObject.name + "wasCollected");
+                     return i;
+                }
+                if (Vector2.Distance(playerMovement.GetPosFlat(), diamonds[i].GetPosFlat()) > maxDistance)
+                {
+                    Debug.Log(Vector2.Distance(playerMovement.GetPosFlat(), diamonds[i].GetPosFlat()));
+                    return i;
+                }
             }
             return null;
         }
 
-        private void GenerateDiamond(int? index)
+        private void GenerateDiamond(int index)
         {
             float distanceFlat = Random.Range(minDistanceForGeneration, maxDistance);
             float angle = Random.Range(0, Mathf.PI * 2);
+            Vector2 playerPos = playerMovement.GetPosFlat();
+            Vector3 newPos = new Vector3(playerPos.x + Mathf.Cos(angle) * distanceFlat, 200, playerPos.y + Mathf.Sin(angle) * distanceFlat);
+
+            if (CloseToOtherArtifacts(newPos, index))
+            {
+                GenerateDiamond(index);
+                Debug.Log("Diamond too close to another");
+                return;
+            }
+
+            diamonds[index].Reset(newPos);
+        }
+
+        private bool CloseToOtherArtifacts(Vector2 pos, int index)
+        {
+            for (int i = 0; i < diamonds.Count; i++)
+            {
+                if (i == index) continue;
+                else if (Vector2.Distance(diamonds[i].GetPosFlat(), pos) < minDistanceForGeneration) return true;
+            }
+
+            return false;
         }
     }
 }

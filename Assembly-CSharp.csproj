@@ -43,9 +43,9 @@
      <Compile Include="Assets\Diamond.cs" />
      <Compile Include="Assets\ArtifactManager.cs" />
      <Compile Include="Assets\SimplexNoise-master\SimplexNoise\Noise.cs" />
+     <Compile Include="Assets\CameraManager.cs" />
      <Compile Include="Assets\PlayerChild.cs" />
      <Compile Include="Assets\DirectionalLightManager.cs" />
-     <Compile Include="Assets\CameraManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

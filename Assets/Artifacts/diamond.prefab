@@ -229,7 +229,8 @@ GameObject:
   - component: {fileID: 6395172275405872142}
   - component: {fileID: 6395172275405872143}
   - component: {fileID: 6395172275405872140}
-  - component: {fileID: 8322192017668175966}
+  - component: {fileID: 1686988420}
+  - component: {fileID: 2729744045816501399}
   m_Layer: 0
   m_Name: diamond
   m_TagString: Diamond
@@ -316,21 +317,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diamondHeight: 1
-  minimumHeight: 0.3
-  maximumHeight: 2
+  minimumHeight: 0.2
+  maximumHeight: 1.2
+  animationCollected: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
---- !u!135 &8322192017668175966
-SphereCollider:
+--- !u!95 &1686988420
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6395172275405872178}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6201fcac21787ea42b02026ba9a5688b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &2729744045816501399
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6395172275405872178}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.015
+  m_Height: 0.2
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.013596952, g: 0.010898374, b: 0.011052191, a: 1}
+  m_IndirectSpecularColor: {r: 0.013632748, g: 0.010896377, b: 0.010967612, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -975,6 +975,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f73af3bc6da1b824d8d3ed979af25185,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f73af3bc6da1b824d8d3ed979af25185, type: 3}
 --- !u!1 &638131833
@@ -1164,7 +1169,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698934407}
-  m_LocalRotation: {x: 0.38996717, y: -0.000000010793814, z: 0.000000004571136, w: 0.92082876}
+  m_LocalRotation: {x: 0.3899672, y: 0.000000029489254, z: -0.000000012488577, w: 0.92082876}
   m_LocalPosition: {x: 0, y: 64.47, z: -14.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1518,7 +1523,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853833725}
-  m_LocalRotation: {x: 0.38996717, y: -0.000000010793814, z: 0.000000004571136, w: 0.92082876}
+  m_LocalRotation: {x: 0.3899672, y: 0.000000029489254, z: -0.000000012488577, w: 0.92082876}
   m_LocalPosition: {x: 0, y: 64.47, z: -14.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1765,8 +1770,8 @@ MonoBehaviour:
   diamond: {fileID: 919132149155446097, guid: d8782ca36e5d8ea4fa7abde85abe1ce0, type: 3}
   noiseManager: {fileID: 657838311}
   playerMovement: {fileID: 832690629}
-  minDistanceForGeneration: 10
-  maxDistance: 20
+  minDistanceForGeneration: 30
+  maxDistance: 60
   diamonds:
   - {fileID: 1686988415}
   - {fileID: 2091819155}
@@ -2311,7 +2316,7 @@ PrefabInstance:
     - target: {fileID: 6395172275405872141, guid: 6e9ff68dcb2112b48bcf8653076dec36,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6395172275405872141, guid: 6e9ff68dcb2112b48bcf8653076dec36,
         type: 3}
@@ -2321,7 +2326,7 @@ PrefabInstance:
     - target: {fileID: 6395172275405872141, guid: 6e9ff68dcb2112b48bcf8653076dec36,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 7.7
       objectReference: {fileID: 0}
     - target: {fileID: 6395172275405872141, guid: 6e9ff68dcb2112b48bcf8653076dec36,
         type: 3}
@@ -2363,7 +2368,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: diamond (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 6e9ff68dcb2112b48bcf8653076dec36, type: 3}
 --- !u!1 &1198529420
 GameObject:
@@ -2728,7 +2734,7 @@ PrefabInstance:
     - target: {fileID: 6395172275405872141, guid: 6e9ff68dcb2112b48bcf8653076dec36,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6395172275405872141, guid: 6e9ff68dcb2112b48bcf8653076dec36,
         type: 3}
@@ -2738,7 +2744,7 @@ PrefabInstance:
     - target: {fileID: 6395172275405872141, guid: 6e9ff68dcb2112b48bcf8653076dec36,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6395172275405872141, guid: 6e9ff68dcb2112b48bcf8653076dec36,
         type: 3}
@@ -2780,7 +2786,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: diamond (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 6e9ff68dcb2112b48bcf8653076dec36, type: 3}
 --- !u!1 &1667577856
 GameObject:
