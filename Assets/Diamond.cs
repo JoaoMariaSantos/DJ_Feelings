@@ -7,17 +7,20 @@ namespace Artifact
 {
     public class Diamond : MonoBehaviour
     {
+        [Header("Measurements")]
         public float diamondHeight;
         public float minimumHeight;
         public float maximumHeight;
         private float gapHeight;
         private float timeTracker;
+
+        [Header("Variables")]
         private Animator anim;
-        public AnimationClip animationCollected;
         private PlayerMovement playerMovement;
         private bool movingToPlayer = false;
         public LayerMask whatIsGround;
         private bool wasCollected = false;
+        public AudioManager audioManager;
 
         void Awake()
         {
@@ -37,10 +40,13 @@ namespace Artifact
 
             bool onGround = Physics.Raycast(downRay, out toGround, Mathf.Infinity, whatIsGround);
 
-            if(movingToPlayer){
+            if (movingToPlayer)
+            {
                 MoveToPlayer();
                 return;
             }
+
+                        float targetHeight;
 
             if (onGround)
             {
@@ -49,16 +55,19 @@ namespace Artifact
 
                 float hitPointY = toGround.point.y; //gets y coordinates of intersection of raycast and ground (cube);
 
-                float currentHeight = hitPointY + minimumHeight + diamondHeight / 2 + gapHeight * SinValue;
+                targetHeight = hitPointY + minimumHeight + diamondHeight / 2 + gapHeight * SinValue;
 
-                gameObject.transform.position = new Vector3(gameObject.transform.position.x, currentHeight, gameObject.transform.position.z);
 
                 gameObject.transform.Rotate(Vector3.up, 3);
             }
             else
             {
-                gameObject.transform.position = new Vector3(gameObject.transform.position.x, 50, gameObject.transform.position.z);
+                targetHeight = 50;
             }
+
+            float currentHeight = gameObject.transform.position.y + (targetHeight - gameObject.transform.position.y) * 0.02f;
+
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, currentHeight, gameObject.transform.position.z);
         }
 
         void OnTriggerEnter(Collider collision)
@@ -73,6 +82,7 @@ namespace Artifact
         {
             //anim.enabled = true;
             anim.Play("diamondCollected");
+            audioManager.PlaySound("ApanharDiamante");
         }
 
         public void CollectionDone()
@@ -106,7 +116,7 @@ namespace Artifact
         {
             gameObject.transform.position = newPos;
             FixPosition();
-            anim.Play("diamondIdle");
+            //anim.Play("diamondIdle");
             wasCollected = false;
             movingToPlayer = false;
         }

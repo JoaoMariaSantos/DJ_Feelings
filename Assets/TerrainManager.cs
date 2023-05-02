@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using SimplexNoise;
 using Noise;
 using TMPro;
 using System.Linq;
@@ -30,6 +27,11 @@ namespace Terrain
         private float heightThreshold;
         private float timeTracker;
 
+        [Header("LevelUp")]
+        private bool rippling = false;
+        private float ripplingDuration;
+        private float ripplingValue;
+
         private GameObject[] cubes;
         // Start is called before the first frame update
         void Awake()
@@ -37,14 +39,10 @@ namespace Terrain
             noiseManager = GameObject.FindGameObjectWithTag("NoiseManager").GetComponent<NoiseManager>();
             cubes = CreateCubes(nCubesSide, cubeEdgeMeasure, material);
 
-            referenceHues = new[] { new Vector3 (-1,  1, 0),  new Vector3(0, -1, 30),  new Vector3 (1,  1,  60),
-                                    new Vector3 (-1,  0, 300),                           new Vector3 (1,  0,  90),
-                                    new Vector3 (-1, -1, 240),    new Vector3(0,  1, 200), new Vector3 (1, -1, 160)
+            referenceHues = new[] { new Vector3 (-1,  1, 360),   new Vector3(0, -1, 30),  new Vector3 (1,  1,  60),
+                                    new Vector3 (-1,  0, 300),                          new Vector3 (1,  0,  90),
+                                    new Vector3 (-1, -1, 240), new Vector3(0,  1, 200), new Vector3 (1, -1, 160)
                                   };
-        }
-        void Start()
-        {
-
         }
 
         // Update is called once per frame
@@ -63,6 +61,17 @@ namespace Terrain
 
             timeTracker += Time.deltaTime * arousalValue;
             float sinValue = Mathf.Sin(timeTracker) / 20;
+
+            if (rippling)
+            {
+                ripplingDuration -= Time.deltaTime;
+
+                ripplingValue += 0.15f;
+                if (ripplingDuration <= 0)
+                {
+                    rippling = false;
+                }
+            }
 
             UpdateCubes(material, sinValue, valenceValueEdited, arousalValueEdited);
 
@@ -109,7 +118,7 @@ namespace Terrain
 
             lastHue = finalHue;
 
-            return Color.HSVToRGB(finalHue/360, finalSaturation, finalValue);
+            return Color.HSVToRGB(finalHue / 360, finalSaturation, finalValue);
         }
 
         void TeleportTerrain()
@@ -140,6 +149,7 @@ namespace Terrain
         {
             float scale = (Mathf.Pow(arousal + 1, 3)) * 1.5f;
             float erraticness = Vector2.Distance(new Vector2(-1, -1), new Vector2(valence, arousal)) * 0.15f;
+            float rippleSpeed = 0.5f;
 
             for (int x = 0; x < nCubesSide; x++)
             {
@@ -156,9 +166,21 @@ namespace Terrain
                     float zDistance = cubes[currentIndex].transform.position.z - characterPos.position.z;
 
                     float currentCubeHeight = 0;
+
                     //float currentCubeHeight = distanceValue * scale;
-                    if(isFlat) currentCubeHeight = Mathf.PerlinNoise(xDistance * erraticness + sinValue, zDistance * erraticness + sinValue) * distanceValue * scale + 0.1f;
-                    else       currentCubeHeight = Mathf.PerlinNoise(xDistance * erraticness + sinValue, zDistance * erraticness + sinValue) * scale;
+                    if (isFlat) currentCubeHeight = Mathf.PerlinNoise(xDistance * erraticness + sinValue, zDistance * erraticness + sinValue) * distanceValue * scale + 0.1f;
+                    else currentCubeHeight = Mathf.PerlinNoise(xDistance * erraticness + sinValue, zDistance * erraticness + sinValue) * scale;
+
+                    if (rippling)
+                    {
+                        float rippleDistanceValue = Mathf.Abs(distance - ripplingValue);
+                        if (rippleDistanceValue < 4)
+                        {
+                            float rippleValue = Mathf.Clamp(1 / Mathf.Abs(distance - ripplingValue), 0, ripplingValue/4);
+                            currentCubeHeight += rippleValue;
+                        }
+                    }
+
                     //float currentCubeHeight = Mathf.PerlinNoise(xDistance * erraticness + sinValue, zDistance * erraticness + sinValue) * 0.75f * scale;
                     //if (currentCubeHeight < 0.1f) currentCubeHeight = 0.1f;
                     cubes[currentIndex].transform.position = new Vector3(cubes[currentIndex].transform.position.x, currentCubeHeight / 2, cubes[currentIndex].transform.position.z);
@@ -207,7 +229,20 @@ namespace Terrain
             return createdCubes;
         }
 
-        public float GetHue(){
+        public void IncreaseCubeHeight(GameObject cube, float height)
+        {
+            cube.transform.localScale = new Vector3(cubeEdgeMeasure, height, cubeEdgeMeasure);
+        }
+
+        public void StartRippleEffect(float duration) //ripple effect on level up
+        {
+            ripplingValue = 0;
+            ripplingDuration = duration;
+            rippling = true;
+        }
+
+        public float GetHue()
+        {
             return lastHue;
         }
     }

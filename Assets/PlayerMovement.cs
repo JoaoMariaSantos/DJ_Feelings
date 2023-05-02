@@ -19,6 +19,8 @@ namespace Player
         public float airMultiplier;
         bool readyToJump = true;
 
+        bool movementEnabled = true;
+
         [Header("Noise")]
 
         public NoiseManager noiseManager;
@@ -33,6 +35,7 @@ namespace Player
         public float playerHeight;
         public LayerMask whatIsGround;
         bool grounded;
+        public AudioManager audioManager;
 
         //public Transform orientation;
 
@@ -50,8 +53,15 @@ namespace Player
         {
             grounded = Physics.Raycast(transform.position, Vector2.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
-            MyInput();
-            SpeedControl();
+            if (movementEnabled)
+            {
+                MyInput();
+                SpeedControl();
+            }
+            else
+            {
+                StopPlayer();
+            } 
 
             if (grounded)
                 rb.drag = groundDrag;
@@ -68,7 +78,7 @@ namespace Player
             horizontalInput = Input.GetAxisRaw("Horizontal");
             verticalInput = Input.GetAxisRaw("Vertical");
 
-            float arousal = ( noiseManager.GetArousalEdited() + 1f ) * 0.35f + 0.2f;
+            float arousal = (noiseManager.GetArousalEdited() + 1f) * 0.35f + 0.2f;
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -106,7 +116,14 @@ namespace Player
             {
                 rb.AddForce(moveDirection.normalized * moveSpeed * 9f * airMultiplier, ForceMode.Force);
             }
+        }
 
+        private void StopPlayer()
+        {
+            Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+            float thisVelocity = flatVel.magnitude * 0.01f;
+            Vector3 limitedVel = flatVel.normalized * thisVelocity;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
 
         private void SpeedControl()
@@ -118,7 +135,7 @@ namespace Player
 
                 //Vector3 limitedVel = flatVel.normalized * moveSpeed;
 
-                float diff =  moveSpeed - flatVel.magnitude;
+                float diff = moveSpeed - flatVel.magnitude;
                 float thisVelocity = flatVel.magnitude + diff * 0.01f;
                 Vector3 limitedVel = flatVel.normalized * thisVelocity;
 
@@ -131,11 +148,30 @@ namespace Player
             float arousal = (noiseManager.GetArousalRaw() + 1) / 1.5f + 0.2f;
             float currentJumpForce = jumpForce * arousal;
             rb.AddForce(Vector3.up * currentJumpForce, ForceMode.Impulse);
+            audioManager.ChangeVolume("Jump", arousal / 3);
+            audioManager.ChangePitch("Jump", arousal - 0.1f);
+            audioManager.PlaySound("Jump");
         }
 
         private void ResetJump()
         {
             readyToJump = true;
+        }
+
+        public GameObject GetCubeStandingOn()
+        {
+            Ray downRay = new Ray(transform.position, -Vector3.up);
+            RaycastHit toGround;
+
+            bool onGround = Physics.Raycast(downRay, out toGround, Mathf.Infinity, whatIsGround);
+
+            GameObject hit = toGround.collider.gameObject;
+
+            if(hit.name.Contains("ube")) return hit;
+
+            Debug.LogWarning("no cube hit");
+            
+            return null;
         }
 
         public Vector2 GetPosFlat()
@@ -147,6 +183,16 @@ namespace Player
         {
             Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
             return flatVel.magnitude;
+        }
+
+        public void DisableMovement()
+        {
+            movementEnabled = false;
+        }
+
+        public void EnableMovement()
+        {
+            movementEnabled = true;
         }
     }
 }
