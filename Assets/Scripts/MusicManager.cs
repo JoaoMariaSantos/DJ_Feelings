@@ -48,7 +48,7 @@ public class MusicManager : MonoBehaviour
 
         for (int i = 0; i < distancesToMusic.Length; i++)
         {
-            float val = ((1 * a) / distancesToMusic[i].x + b) * 0.5f;
+            float val = ((1 * a) / distancesToMusic[i].x + b) * 0.6f;
             sources[i].volume = val;//(musicNames[(int)distancesToMusic[i].y], val);
         }
     }

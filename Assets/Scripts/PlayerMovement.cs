@@ -86,7 +86,7 @@ namespace Player
             }
             else moveSpeed = defaultMoveSpeed * arousal;
 
-            if (Input.GetKey(jumpKey) && readyToJump && grounded)
+            if (Input.GetKeyDown(jumpKey) && readyToJump && grounded)
             {
                 readyToJump = false;
 

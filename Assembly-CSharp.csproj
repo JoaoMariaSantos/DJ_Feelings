@@ -718,12 +718,6 @@
     <Reference Include="System.Xml.Serialization">
         <HintPath>E:\Unity\Hub\Editor\2021.3.13f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualEffectGraph.Editor">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.VisualEffectGraph.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -733,14 +727,74 @@
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Management">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.XR.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Oculus.Editor">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.XR.Oculus.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Editor">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.VisualEffectGraph.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualEffectGraph.Runtime">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.VisualEffectGraph.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+    <Reference Include="Unity.XR.Management.Editor">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.XR.Management.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -751,65 +805,35 @@
     <Reference Include="Unity.TextMeshPro">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    <Reference Include="Unity.Burst.Editor">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Editor">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Searcher.Editor">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.HighDefinition.Editor">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Subsystem.Registration">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Subsystem.Registration.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Rider.Editor">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    <Reference Include="Unity.Services.Core">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.EditorCoroutines.Editor">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Mathematics">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Services.Core">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
@@ -817,8 +841,8 @@
     <Reference Include="Unity.Burst">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
@@ -832,11 +856,14 @@
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    <Reference Include="UnityEditor.XR.LegacyInputHelpers">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
-        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
+    <Reference Include="Unity.XR.Oculus">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.XR.Oculus.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.SpatialTracking">
+        <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
         <HintPath>E:\users\joaos\Desktop\Cenas\Cenas2.0\UC\4.2\DesignDeJogos\PROJECT\REPO\DJ_Feelings\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
