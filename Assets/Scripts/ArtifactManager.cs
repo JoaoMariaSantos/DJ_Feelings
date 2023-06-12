@@ -27,6 +27,7 @@ namespace Artifact
         private int currentLevelCollectedDiamonds;
         public delegate void RelicAction();
         public static event RelicAction OnRelicCollection;
+        bool infinityMode = false;
         void Awake()
         {
             StatusRelic(false);
@@ -84,7 +85,7 @@ namespace Artifact
                 if (diamonds[i].GetCollectionStatus())
                 {
                     currentLevelCollectedDiamonds++;
-                    CheckAllDiamondsCollected();
+                    if(!infinityMode) CheckAllDiamondsCollected();
                     return i;
                 }
                 if (Vector2.Distance(playerMovement.GetPosFlat(), diamonds[i].GetPosFlat()) > maxDistance)
@@ -142,7 +143,7 @@ namespace Artifact
             float distanceFlat = Random.Range(minDistanceForGeneration, maxDistance);
             float angle = Random.Range(0, Mathf.PI * 2);
             Vector2 playerPos = playerMovement.GetPosFlat();
-            Vector3 newPos = new Vector3(playerPos.x + Mathf.Cos(angle) * distanceFlat, 200, playerPos.y + Mathf.Sin(angle) * distanceFlat);
+            Vector3 newPos = new Vector3(playerPos.x + Mathf.Cos(angle) * distanceFlat, 50, playerPos.y + Mathf.Sin(angle) * distanceFlat);
 
             relicParent.Reset(newPos);
         }
@@ -189,6 +190,31 @@ namespace Artifact
             Debug.Log("LEVEL UP: " + level);
             currentLevelCollectedDiamonds = 0;
             currentLevel = level;
+        }
+
+        public Transform GetClosestEnabledArtifact(){
+            if(diamondPhase){
+                Diamond closestDiamond = diamonds[0];
+                for(int i = 1; i < diamonds.Count; i++){
+                    if(Vector2.Distance(diamonds[i].GetPosFlat(), playerMovement.GetPosFlat()) < Vector2.Distance(closestDiamond.GetPosFlat(), playerMovement.GetPosFlat())){
+                        closestDiamond = diamonds[i];
+                    }
+                }
+                return closestDiamond.transform;
+            } else {
+                return relicParent.transform;
+            }
+        }
+
+        public void EnableInfinityMode(){
+            infinityMode = true;
+        }
+
+        public int[] GetNumberOfDiamondsLeft(){
+            int[] toReturn;
+            if(!infinityMode) toReturn = new[] { neededDiamondsPerLevel[currentLevel] - currentLevelCollectedDiamonds,  neededDiamondsPerLevel[currentLevel]};
+            else toReturn = new [] {100 - currentLevelCollectedDiamonds, 100};
+            return toReturn;
         }
     }
 }

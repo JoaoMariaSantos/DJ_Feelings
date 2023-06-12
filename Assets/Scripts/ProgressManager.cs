@@ -5,6 +5,7 @@ using Noise;
 using Artifact;
 using Player;
 using Terrain;
+using Credits;
 
 public class ProgressManager : MonoBehaviour
 {
@@ -12,13 +13,15 @@ public class ProgressManager : MonoBehaviour
     public NoiseManager noiseManager;
     public ArtifactManager artifactManager;
     public PlayerMovement playerMovement;
+    public Dashing playerDash;
+    public HintAbility hintAbility;
     public TerrainManager terrainManager;
     public AudioManager audioManager;
+    public EndScreenManager endScreenManager;
 
     [Header("Progession Variables")]
     public List<int> neededDiamondsPerLevel;
     public List<float> feelingRadiusPerLevel;
-    private bool levelingUp = false;
 
     float currentCubeHeight;
     private int currentLevel = 0;
@@ -27,11 +30,6 @@ public class ProgressManager : MonoBehaviour
     {
         SetDiamondProgression();
         SetNoiseMax();
-    }
-
-    void LateUpdate()
-    {
-        if (levelingUp) ComputeLevelingUp();
     }
 
     void OnEnable()
@@ -47,29 +45,23 @@ public class ProgressManager : MonoBehaviour
 
     void LevelingUp()
     {
-        Debug.Log("LEVELING UP");
         float rippleEffectDuration = 6f;
         audioManager.PlaySound("LevelUp");
-        levelingUp = true;
-        //playerMovement.DisableMovement();
         terrainManager.StartRippleEffect(rippleEffectDuration);
-        //currentCubeHeight = playerMovement.GetCubeStandingOn().transform.localScale.y;
         Invoke(nameof(LevelUp), rippleEffectDuration/2);
-    }
-
-    void ComputeLevelingUp()
-    {
-        GameObject cubeUnderPlayer = playerMovement.GetCubeStandingOn();
-        if (cubeUnderPlayer == null) return;
     }
 
     void LevelUp()
     {
-        playerMovement.EnableMovement();
-        if (currentLevel + 1 >= neededDiamondsPerLevel.Count) return;
+        if (currentLevel + 1 >= neededDiamondsPerLevel.Count){
+            artifactManager.EnableInfinityMode();
+            endScreenManager.gameEnded();
+            return;
+        } 
         currentLevel++;
         artifactManager.ChangeCurrentLevel(currentLevel);
-        levelingUp = false;
+        if(currentLevel == 2) playerDash.unlockDash();
+        else if(currentLevel == 1) hintAbility.unlockHint();
         SetNoiseMax();
     }
 

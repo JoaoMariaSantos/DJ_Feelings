@@ -15,7 +15,7 @@ public class Sound
 
     public bool loop;
 
-    [Range(0, 2)]
+    [Range(0, 7)]
     public int sourceID;
 
     [HideInInspector]

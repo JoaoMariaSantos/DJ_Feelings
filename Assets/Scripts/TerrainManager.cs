@@ -149,7 +149,6 @@ namespace Terrain
         {
             float scale = (Mathf.Pow(arousal + 1, 3)) * 1.5f;
             float erraticness = Vector2.Distance(new Vector2(-1, -1), new Vector2(valence, arousal)) * 0.15f;
-            float rippleSpeed = 0.5f;
 
             for (int x = 0; x < nCubesSide; x++)
             {

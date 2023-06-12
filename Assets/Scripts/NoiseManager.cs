@@ -44,18 +44,14 @@ namespace Noise
             arousalValue = Map(-1 + Mathf.PerlinNoise(seed + noiseOffsetX, noiseOffsetZ)                     * 2, -1, 1, -maxArousalValue, maxArousalValue);
             valenceValue = Map(-1 + Mathf.PerlinNoise(seed + noiseOffsetX + secondSeed, noiseOffsetZ + 1000) * 2, -1, 1, -maxValenceValue, maxValenceValue);
 
-            //arousalValue = 1;
-            //valenceValue = -1;
-
-/*             if (timeTracker < startingTime)
-            {
-                float multiplier = timeTracker / startingTime;
-                arousalValue *= multiplier;
-                valenceValue *= multiplier;
-            } */
-
             arousalValueEdited = Map(1 / (1 + Mathf.Pow(234, -arousalValue)) * 2 - 1, -1, 1, -maxArousalValue, maxArousalValue); //through sigmoid graph for more extreme results
             valenceValueEdited = Map(1 / (1 + Mathf.Pow(234, -valenceValue)) * 2 - 1, -1, 1, -maxArousalValue, maxArousalValue);
+
+            /*arousalValue = 1;
+            valenceValue = 1;
+
+            arousalValueEdited = 1;
+            valenceValueEdited = 1;*/
         }
 
         public void SetMaxArousal(float newMaxArousal){

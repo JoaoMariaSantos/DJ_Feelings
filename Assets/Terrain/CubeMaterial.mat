@@ -108,8 +108,13 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.571572, g: 0.6885285, b: 0.6260952, a: 1}
-    - _Color: {r: 0.58258, g: 0.613384, b: 0.60217625, a: 1}
+<<<<<<< HEAD
+    - _BaseColor: {r: 0.6145632, g: 0.62302697, b: 0.619469, a: 1}
+    - _Color: {r: 0.61456317, g: 0.62302697, b: 0.619469, a: 1}
+=======
+    - _BaseColor: {r: 0.56461143, g: 0.6176189, b: 0.59370655, a: 1}
+    - _Color: {r: 0.56461143, g: 0.6176189, b: 0.5937065, a: 1}
+>>>>>>> parent of 1a35059 (sound panning fix)
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
