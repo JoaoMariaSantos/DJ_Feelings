@@ -59,7 +59,11 @@ Material:
     - _DstBlend: 0
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
-    - _Metallic: 0.5
+<<<<<<< HEAD
+    - _Metallic: 0.49736926
+=======
+    - _Metallic: 0.4901586
+>>>>>>> parent of 1a35059 (sound panning fix)
     - _OpaqueCullMode: 2
     - _RayTracing: 0
     - _ReceivesSSR: 1
@@ -67,7 +71,11 @@ Material:
     - _RefractionModel: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
-    - _Smoothness: 0.7
+<<<<<<< HEAD
+    - _Smoothness: 0.6937377
+=======
+    - _Smoothness: 0.65823096
+>>>>>>> parent of 1a35059 (sound panning fix)
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 8
@@ -94,7 +102,11 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.32, g: 0.8, b: 0.5999939, a: 1}
+<<<<<<< HEAD
+    - _Color: {r: 0.12967189, g: 0.1578794, b: 0.14592196, a: 1}
+=======
+    - _Color: {r: 0.3089823, g: 0.7514153, b: 0.54471344, a: 1}
+>>>>>>> parent of 1a35059 (sound panning fix)
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
